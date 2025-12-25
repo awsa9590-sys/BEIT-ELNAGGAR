@@ -3,98 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عن بيت النجار | قصة الجودة والإتقان</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>عن بيت النجار</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        .about-page {
-            padding: 60px 10%;
-            background: #fff;
+        /* إضافة التنسيقات المتوافقة مع صفحة المنتجات */
+        .about-section { padding: 60px 10%; text-align: center; }
+        .about-title { color: var(--accent-color); margin-bottom: 30px; font-size: 2.5rem; }
+        .about-text { font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; text-align: justify; line-height: 1.8; }
+        
+        .vision-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+            margin-top: 50px; 
         }
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
+        
+        .vision-card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            border-bottom: 4px solid var(--main-brown);
+            transition: 0.3s;
         }
-        .about-content h2 {
-            color: var(--accent-color);
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-        }
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 2;
-            color: var(--main-brown);
-            margin-bottom: 40px;
-            text-align: justify;
-        }
-        .vision-mission {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .card {
-            background: var(--bg-color);
-            padding: 30px;
-            border-radius: 15px;
-            border-right: 5px solid var(--accent-color);
-        }
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--main-brown);
-        }
+        
+        .vision-card:hover { transform: translateY(-10px); }
+        .vision-card h3 { color: var(--accent-color); margin-bottom: 15px; }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">بيت النجار</div>
-            <ul>
+            <div class="logo">
+                <a href="index.html"><img src="00.jpg" alt="بيت النجار" class="logo-img"></a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="nav-menu">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="products.html">الأثاث</a></li>
-                <li><a href="about.html" style="color: var(--accent-color);">عن المشروع</a></li>
+                <li><a href="about.html" class="active">عن المشروع</a></li>
                 <li><a href="contact.html">تواصل معنا</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="about-page">
-        <div class="about-content">
-            <h2>قصة بيت النجار</h2>
-            <div class="about-text">
-                <p>
-                    بدأ "بيت النجار" كشغف بفن النجارة وتحويل الأخشاب الطبيعية إلى قطع أثاث تعيش لأجيال. نحن لسنا مجرد مصنع للأثاث، بل نحن فنانون نهتم بأدق التفاصيل، من اختيار نوع الخشب وحتى اللمسات النهائية للدهان. 
-                </p>
-                <p>
-                    نؤمن في بيت النجار بأن الأثاث هو روح المنزل، ولذلك نجمع في تصاميمنا بين الأصالة الكلاسيكية وروح العصر المودرن، مع الالتزام التام بمعايير المتانة والجودة العالمية لضمان تقديم منتج يفوق توقعات عملائنا.
-                </p>
-            </div>
+    <section class="about-section">
+        <h2 class="about-title">قصة بيت النجار</h2>
+        <div class="about-text">
+            <p>
+                بدأ "بيت النجار" كحلم لتقديم أثاث مصري يضاهي الجودة العالمية باستخدام أخشاب طبيعية 100%. نحن نتخصص في تحويل الأخشاب إلى قطع فنية تخدم منزلك وتعيش لأجيال، مع التركيز على دقة التفاصيل وجودة الدهانات.
+            </p>
+        </div>
 
-            <div class="vision-mission">
-                <div class="card">
-                    <h3>رؤيتنا</h3>
-                    <p>أن نصبح الوجهة الأولى لكل من يبحث عن التميز والفرادة في تأثيث منزله، مع الحفاظ على بصمتنا الخاصة في فن النجارة اليدوية والآلية.</p>
-                </div>
-                <div class="card">
-                    <h3>رسالتنا</h3>
-                    <p>تقديم قطع أثاث تجمع بين الفخامة والوظيفة، مع التركيز على استخدام الخشب الطبيعي 100% ودقة التنفيذ التي تضمن الاستدامة.</p>
-                </div>
+        <div class="vision-grid">
+            <div class="vision-card">
+                <h3>رؤيتنا</h3>
+                <p>أن نصبح الاسم الأول في مصر للأثاث الخشبي المخصص الذي يجمع بين الأصالة والحداثة.</p>
+            </div>
+            <div class="vision-card">
+                <h3>جودتنا</h3>
+                <p>نستخدم أفضل أنواع الأخشاب الطبيعية لضمان الاستدامة والمتانة التي تفوق توقعات عملائنا.</p>
+            </div>
+            <div class="vision-card">
+                <h3>التزامنا</h3>
+                <p>الدقة في المواعيد والإتقان في التنفيذ هما الركيزتان الأساسيتان في علاقتنا مع كل عميل.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p>جميع الحقوق محفوظة © بيت النجار 2025</p>
-            <div class="social">
-                <a href="https://web.facebook.com/profile.php?id=61585558916537" target="_blank">تابعنا على فيسبوك</a>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/201225829644" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        <span>تواصل معنا</span>
+    <a href="https://wa.me/201119936957" class="whatsapp-float" target="_blank">
+        <span>تواصل واتساب</span>
     </a>
+
+    <script>
+        // دالة التحكم في القائمة كما في صفحة المنتجات
+        function toggleMenu() { 
+            document.getElementById('nav-menu').classList.toggle('active'); 
+        }
+    </script>
 </body>
 </html>
