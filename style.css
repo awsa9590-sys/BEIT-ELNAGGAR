@@ -63,7 +63,7 @@ nav ul li a { color: var(--white); text-decoration: none; font-weight: bold; tra
 nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
 
 /* زر الموبايل */
-.menu-toggle { display: none; color: rgb(21, 104, 13); font-size: 1.8rem; cursor: pointer; }
+.menu-toggle { display: none; color: rgb(255, 255, 255); font-size: 1.8rem; cursor: pointer; }
 
 /* 3. زر الواتساب العائم */
 .whatsapp-float {
@@ -152,5 +152,4 @@ nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
         border-radius: 50%;
     }
     .floating-social-bar { left: 15px; bottom: 15px; }
-
 }
