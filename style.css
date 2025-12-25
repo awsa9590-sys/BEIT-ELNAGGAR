@@ -10,8 +10,21 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 html { scroll-behavior: smooth; }
-body { background-color: var(--bg-color); color: var(--main-brown); line-height: 1.6; overflow-x: hidden; }
+body { 
+    background-color: var(--bg-color); /* لون البيج الفاتح المعرف في المتغيرات */
+    color: var(--main-brown); 
+    line-height: 1.6; 
+    overflow-x: hidden;
+    min-height: 100vh; /* يضمن أن الخلفية تغطي كامل ارتفاع الشاشة على الأقل */
+    display: flex;
+    flex-direction: column;
+}
 
+/* لضمان أن أي قسم جديد يأخذ لون الخلفية تلقائياً */
+section {
+    background-color: transparent; 
+    width: 100%;
+}
 /* 2. الهيدر والقائمة (Header & Nav) */
 header {
     background-color: var(--main-brown);
@@ -21,18 +34,36 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
+/* جعل اللوجو يبرز فوق وخارج الشريط البني */
+.logo {
+    position: relative; /* للسماح للوجو بالتحرك بحرية */
+    z-index: 1001;      /* التأكد من ظهوره فوق كل شيء */
+}
 
-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.logo img { 
+    height: 300px;      /* الحجم الكبير الذي طلبته */
+    position: absolute; /* يجعله منفصل عن تدفق العناصر في الشريط */
+    top: -50px;         /* يرفعه للأعلى قليلاً */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); /* ظل ليعطيه عمق */
+    transition: var(--transition); 
+}
 
-.logo img { height: 60px; transition: var(--transition); }
-.logo img:hover { transform: scale(1.05); }
+/* إضافة مساحة في الهيدر لتعويض مكان اللوجو */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80px; /* يضمن بقاء الشريط البني بارتفاع ثابت */
+}
 
 nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }
 nav ul li a { color: var(--white); text-decoration: none; font-weight: bold; transition: var(--transition); font-size: 1.1rem; }
 nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
 
 /* زر الموبايل */
-.menu-toggle { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+.menu-toggle { display: none; color: rgb(21, 104, 13); font-size: 1.8rem; cursor: pointer; }
 
 /* 3. زر الواتساب العائم */
 .whatsapp-float {
@@ -66,4 +97,59 @@ nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
     }
     nav ul.active { display: flex; }
     .hero h1 { font-size: 2rem; }
+}
+/* تنسيق الحاوية العائمة */
+.floating-social-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* يظهر في الركن السفلي الأيسر */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+}
+
+/* التنسيق العام للأزرار */
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/* ألوان الأزرار */
+.whatsapp { background-color: #25D366; }
+.facebook { background-color: #1877F2; }
+
+/* تأثيرات الحركة */
+.social-btn:hover {
+    transform: scale(1.05) translateX(5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.icon {
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+/* التنسيق الخاص بالموبايل (إخفاء النص وإظهار الأيقونة فقط) */
+@media (max-width: 480px) {
+    .btn-text { display: none; }
+    .social-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    .floating-social-bar { left: 15px; bottom: 15px; }
 }
