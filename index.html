@@ -4,49 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بيت النجار | للأثاث والديكور المنزلي</title>
-    
-    <meta name="description" content="بيت النجار - متخصصون في صناعة الأثاث الخشبي الفاخر والديكورات العصرية بجودة عالية.">
-    <meta name="keywords" content="نجارة، أثاث، ديكور، خشب، بيت النجار">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-        }
-        /* تنسيق زر الواتساب العائم */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            z-index: 1000;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-        }
-        .whatsapp-float img {
-            width: 25px;
-            margin-left: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">بيت النجار</div>
-            <ul>
-                <li><a href="index.html">الرئيسية</a></li>
+            <div class="logo"><a href="index.html"><img src="00.jpg" alt="بيت النجار"></a></div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
                 <li><a href="products.html">الأثاث</a></li>
                 <li><a href="about.html">عن المشروع</a></li>
                 <li><a href="contact.html">تواصل معنا</a></li>
@@ -54,47 +20,18 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>أثاث يصنع ليدوم طويلاً</h1>
-        <p>اكتشف تشكيلة واسعة من الأثاث الخشبي الفاخر لبيت عصري وأنيق.</p>
-        <a href="products.html" class="btn">تسوق الآن</a>
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200'); background-size: cover; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px;">
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px;">أثاث يصنع ليدوم طويلاً</h1>
+        <p style="font-size: 1.3rem; max-width: 700px;">نجمع بين جودة الخشب الطبيعي ودقة التصميم العصري لنقدم لك منزلاً يعبر عن ذوقك.</p>
+        <a href="products.html" class="add-btn" style="margin-top: 30px; padding: 15px 40px; font-size: 1.2rem;">تصفح المنتجات</a>
     </section>
 
-    <section class="products-section">
-        <h2 class="title">أحدث أعمالنا</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="badge">الأكثر مبيعاً</div>
-                <img src="[https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80](https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80)" alt="طقم كنب ملكي">
-                <h3>طقم كنب ملكي</h3>
-                <p>خشب طبيعي 100%</p>
-                <div class="price">12,000 ج.م</div>
-                <button class="add-btn">أضف للسلة</button>
-            </div>
-            <div class="product-card">
-                <img src="[https://images.unsplash.com/photo-1581428982868-e410dd047a90?auto=format&fit=crop&w=500&q=80](https://images.unsplash.com/photo-1581428982868-e410dd047a90?auto=format&fit=crop&w=500&q=80)" alt="طاولة طعام">
-                <h3>طاولة طعام دائرية</h3>
-                <p>خشب بلوط فاخر</p>
-                <div class="price">7,500 ج.م</div>
-                <button class="add-btn">أضف للسلة</button>
-            </div>
-            <div class="product-card">
-                <img src="[https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&w=500&q=80](https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&w=500&q=80)" alt="سرير مودرن">
-                <h3>سرير مودرن</h3>
-                <p>تصميم إيطالي عصري</p>
-                <div class="price">9,800 ج.م</div>
-                <button class="add-btn">أضف للسلة</button>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>جميع الحقوق محفوظة © بيت النجار 2025</p>
-    </footer>
-
-    <a href="[https://wa.me/201119936957](https://wa.me/201119936957)" class="whatsapp-float" target="_blank">
-        <img src="[https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg](https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg)" alt="WhatsApp">
-        <span>تواصل عبر واتساب</span>
+    <a href="https://wa.me/201119936957" class="whatsapp-float" target="_blank">
+        <span>تواصل معنا عبر واتساب</span>
     </a>
+
+    <script>
+        function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
+    </script>
 </body>
 </html>

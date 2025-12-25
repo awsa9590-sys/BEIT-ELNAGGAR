@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجات بيت النجار</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .filter-container { text-align: center; padding: 40px 10%; }
+        .filter-btn { padding: 10px 25px; margin: 5px; border: 2px solid var(--main-brown); background: none; cursor: pointer; border-radius: 25px; font-weight: bold; transition: 0.3s; }
+        .filter-btn.active, .filter-btn:hover { background: var(--main-brown); color: white; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html"><img src="00.jpg" alt="بيت النجار"></a></div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html" class="active">الأثاث</a></li>
+                <li><a href="about.html">عن المشروع</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterGallery('all')">الكل</button>
+        <button class="filter-btn" onclick="filterGallery('bedroom')">غرف نوم</button>
+        <button class="filter-btn" onclick="filterGallery('salon')">صالونات</button>
+        <button class="filter-btn" onclick="filterGallery('living')">ركنات</button>
+    </div>
+
+    <section class="product-grid">
+        <div class="product-card" data-category="bedroom">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?w=500" alt="غرفة نوم" onclick="openLightbox(this)">
+            <div class="product-info">
+                <h3>غرفة نوم مودرن</h3>
+                <p class="price">01119936957</p>
+                <a href="https://wa.me/201119936957" class="add-btn">استفسر الآن</a>
+            </div>
+        </div>
+        <div class="product-card" data-category="salon">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500" alt="صالون" onclick="openLightbox(this)">
+            <div class="product-info">
+                <h3>طقم صالون فاخر</h3>
+                <p class="price">تواصل للسعر</p>
+                <a href="https://wa.me/201119936957" class="add-btn">استفسر الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
+
+        function filterGallery(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if(category === 'all' || card.dataset.category === category) card.style.display = 'block';
+                else card.style.display = 'none';
+            });
+        }
+
+        function openLightbox(img) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = img.src;
+        }
+    </script>
+</body>
+</html>
