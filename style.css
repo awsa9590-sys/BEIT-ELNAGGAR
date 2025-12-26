@@ -41,7 +41,7 @@ header {
 }
 
 .logo img { 
-    height: 150px;      /* الحجم الكبير الذي طلبته */
+    height: 100px;      /* الحجم الكبير الذي طلبته */
     position: absolute; /* يجعله منفصل عن تدفق العناصر في الشريط */
     top: -50px;         /* يرفعه للأعلى قليلاً */
     filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); /* ظل ليعطيه عمق */
@@ -154,3 +154,4 @@ nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
     .floating-social-bar { left: 15px; bottom: 15px; }
 
 }
+
