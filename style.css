@@ -145,14 +145,15 @@ nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
 @media (max-width: 480px) {
     .btn-text { display: none; }
     .social-btn {
-        width: 50px;
-        height: 50px;
+        width: 30 px;
+        height: 30 px;
         padding: 0;
         justify-content: center;
         border-radius: 50%;
     }
-    .floating-social-bar { left: 15px; bottom: 15px; }
+    .floating-social-bar { left: 10 px; bottom: 10 px; }
 
 }
+
 
 
