@@ -40,5 +40,30 @@
     <footer style="background-color: var(--main-brown); color: var(--white); text-align: center; padding: 40px 20px; margin-top: auto;">
     <div class="footer-logo">
 </footer>
+    <button id="editBtn" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; padding: 10px 20px; background: #d9534f; color: white; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+    <i class="fas fa-edit"></i> وضع التعديل (بدون كود)
+</button>
+
+<script>
+    const editBtn = document.getElementById('editBtn');
+    let isEditing = false;
+
+    editBtn.addEventListener('click', () => {
+        isEditing = !isEditing;
+        // يجعل الصفحة كاملة قابلة للتعديل أو العكس
+        document.body.contentEditable = isEditing;
+        
+        if (isEditing) {
+            editBtn.innerHTML = '<i class="fas fa-save"></i> إنهاء التعديل';
+            editBtn.style.background = '#28a745';
+            alert('يمكنك الآن الضغط على أي نص في الموقع وتغييره مباشرة!');
+        } else {
+            editBtn.innerHTML = '<i class="fas fa-edit"></i> وضع التعديل (بدون كود)';
+            editBtn.style.background = '#d9534f';
+            alert('تم إيقاف التعديل. (ملحوظة: لحفظ التغييرات نهائياً، يجب نسخ الكود الجديد ووضعه في GitHub)');
+        }
+    });
+</script>
 </body>
+
 </html>
